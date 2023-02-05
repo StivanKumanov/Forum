@@ -1,0 +1,15 @@
+﻿@model ReplyViewModel
+
+<form asp-controller="Reply" asp-action="Create" enctype="multipart/form-data" class="col-lg-6 offset-lg-3 spinner-form">
+    <input type="hidden" asp-for="TopicId" />
+    <input type="hidden" asp-for="AuthorId" />
+
+    <div class="form-grup m-1">
+        <label asp-for="Content"></label>
+        <span asp-validation-for="Content" class="text-danger"></span>
+        <input asp-for="Content" class="form-control inputHover"/>
+    </div>
+    <div class="form-grup m-1 form-button">
+        <input type="submit" class="btn btn-danger" value="Добави" />
+    </div>
+</form>

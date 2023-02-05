@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Forum", "Forum\Forum.csproj", "{8CEC0D77-5358-4287-AD6C-A3BA76A5679C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Forum.Data", "Forum.Data\Forum.Data.csproj", "{4B3E330B-B979-4D4B-A529-308229388AD7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Forum.Data", "Forum.Data\Forum.Data.csproj", "{4B3E330B-B979-4D4B-A529-308229388AD7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Forum.Services", "Forum.Services\Forum.Services.csproj", "{2C390FE6-0FE8-448E-A6F5-D97FCA59D0D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Forum.Services", "Forum.Services\Forum.Services.csproj", "{2C390FE6-0FE8-448E-A6F5-D97FCA59D0D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Forum", "Forum\Forum.csproj", "{8A2562F5-6E72-4295-8D3F-4A78D87888FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Forum.Models", "Forum.Models\Forum.Models.csproj", "{F34C7B76-8F02-463F-9AF4-BE9E95ADD683}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8CEC0D77-5358-4287-AD6C-A3BA76A5679C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8CEC0D77-5358-4287-AD6C-A3BA76A5679C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8CEC0D77-5358-4287-AD6C-A3BA76A5679C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8CEC0D77-5358-4287-AD6C-A3BA76A5679C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4B3E330B-B979-4D4B-A529-308229388AD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4B3E330B-B979-4D4B-A529-308229388AD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B3E330B-B979-4D4B-A529-308229388AD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -27,6 +25,14 @@ Global
 		{2C390FE6-0FE8-448E-A6F5-D97FCA59D0D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C390FE6-0FE8-448E-A6F5-D97FCA59D0D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C390FE6-0FE8-448E-A6F5-D97FCA59D0D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A2562F5-6E72-4295-8D3F-4A78D87888FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A2562F5-6E72-4295-8D3F-4A78D87888FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A2562F5-6E72-4295-8D3F-4A78D87888FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A2562F5-6E72-4295-8D3F-4A78D87888FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F34C7B76-8F02-463F-9AF4-BE9E95ADD683}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F34C7B76-8F02-463F-9AF4-BE9E95ADD683}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F34C7B76-8F02-463F-9AF4-BE9E95ADD683}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F34C7B76-8F02-463F-9AF4-BE9E95ADD683}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,37 @@
+﻿@model TopicDetailsViewModel
+
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Title</h5>
+        <p class="card-text">@Model.Content</p>
+        <p class="card-text">Likes: @Model.Likes</p>
+        <p class="card-text">Dislikes: @Model.Dislikes</p>
+
+    </div>
+</div>
+@if (Model.IsCreator)
+{
+    <a asp-controller="Topics" asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
+    <a asp-controller="Topics" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+}
+@if (User.Identity.IsAuthenticated)
+{
+    <a asp-controller="Reply" asp-action="Create" asp-route-topicId="@Model.Id" asp-route-authorId="@Model.AuthorId">Reply</a>
+
+    
+}
+
+<h3>Replies</h3>
+@foreach (var reply in Model.Replies)
+{
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <p class="card-title">@reply.Content</p>
+            <a asp-controller="Reply" asp-action="Edit" asp-route-id="@reply.Id">Edit</a>
+            <a asp-controller="Reply" asp-action="Delete" asp-route-id="@reply.Id">Delete</a>
+        </div>
+    </div>
+}
+
+<form>
+</form>

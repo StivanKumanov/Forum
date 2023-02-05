@@ -8,7 +8,7 @@ namespace Forum.Data.Models
         public AwardType Type { get; set; }
         public int TopicId { get; set; }
         public Topic Topic { get; set; }
-        public int UserId { get; set; }
+        public string UserId { get; set; }
         public User User { get; set; }
     }
 }

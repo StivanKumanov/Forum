@@ -1,0 +1,12 @@
+﻿@model ReplyViewModel
+
+<form asp-controller="Reply" asp-action="Edit" enctype="multipart/form-data" class="col-lg-6 offset-lg-3 spinner-form">
+    <div class="form-grup m-1">
+        <label asp-for="Content"></label>
+        <span asp-validation-for="Content" class="text-danger"></span>
+        <input asp-for="Content" class="form-control inputHover" />
+    </div>
+    <div class="form-grup m-1 form-button">
+        <input type="submit" class="btn btn-danger" value="Edit" />
+    </div>
+</form>

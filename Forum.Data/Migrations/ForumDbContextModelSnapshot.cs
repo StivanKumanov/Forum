@@ -32,17 +32,14 @@ namespace Forum.Data.Migrations
                     b.Property<int>("Type")
                         .HasColumnType("int");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("UserId1")
+                    b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("TopicId");
 
-                    b.HasIndex("UserId1");
+                    b.HasIndex("UserId");
 
                     b.ToTable("Awards");
                 });
@@ -63,10 +60,7 @@ namespace Forum.Data.Migrations
                     b.Property<int>("TopicId")
                         .HasColumnType("int");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("UserId1")
+                    b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
@@ -75,7 +69,7 @@ namespace Forum.Data.Migrations
 
                     b.HasIndex("TopicId");
 
-                    b.HasIndex("UserId1");
+                    b.HasIndex("UserId");
 
                     b.ToTable("Likes");
                 });
@@ -87,10 +81,7 @@ namespace Forum.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("AuthorId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("AuthorId1")
+                    b.Property<string>("AuthorId")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Content")
@@ -101,7 +92,7 @@ namespace Forum.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AuthorId1");
+                    b.HasIndex("AuthorId");
 
                     b.HasIndex("TopicId");
 
@@ -115,10 +106,7 @@ namespace Forum.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("AuthorId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("AuthorId1")
+                    b.Property<string>("AuthorId")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Content")
@@ -129,7 +117,7 @@ namespace Forum.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AuthorId1");
+                    b.HasIndex("AuthorId");
 
                     b.ToTable("Topics");
                 });
@@ -277,10 +265,12 @@ namespace Forum.Data.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(128)")
+                        .HasMaxLength(128);
 
                     b.Property<string>("ProviderKey")
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(128)")
+                        .HasMaxLength(128);
 
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("nvarchar(max)");
@@ -317,10 +307,12 @@ namespace Forum.Data.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(128)")
+                        .HasMaxLength(128);
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(128)")
+                        .HasMaxLength(128);
 
                     b.Property<string>("Value")
                         .HasColumnType("nvarchar(max)");
@@ -340,7 +332,7 @@ namespace Forum.Data.Migrations
 
                     b.HasOne("Forum.Data.Models.User", "User")
                         .WithMany("Awards")
-                        .HasForeignKey("UserId1");
+                        .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("Forum.Data.Models.Like", b =>
@@ -359,14 +351,14 @@ namespace Forum.Data.Migrations
 
                     b.HasOne("Forum.Data.Models.User", "User")
                         .WithMany("Likes")
-                        .HasForeignKey("UserId1");
+                        .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("Forum.Data.Models.Reply", b =>
                 {
                     b.HasOne("Forum.Data.Models.User", "Author")
                         .WithMany("Replies")
-                        .HasForeignKey("AuthorId1");
+                        .HasForeignKey("AuthorId");
 
                     b.HasOne("Forum.Data.Models.Topic", "Topic")
                         .WithMany("Replies")
@@ -379,7 +371,7 @@ namespace Forum.Data.Migrations
                 {
                     b.HasOne("Forum.Data.Models.User", "Author")
                         .WithMany("Topics")
-                        .HasForeignKey("AuthorId1");
+                        .HasForeignKey("AuthorId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

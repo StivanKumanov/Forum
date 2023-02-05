@@ -19,8 +19,4 @@
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Forum.Services\Forum.Services.csproj" />
-  </ItemGroup>
-
 </Project>

@@ -1,0 +1,18 @@
+﻿@model Topic
+
+<form asp-controller="Topics" asp-action="Edit" enctype="multipart/form-data" class="col-lg-6 offset-lg-3 spinner-form">
+    <input type="hidden" asp-for="Id"/>
+    <div class="form-grup m-1">
+        <label asp-for="Title"></label>
+        <input asp-for="Title" class="form-control inputHover" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+    <div class="form-grup has-danger m-1">
+        <label asp-for="Content"></label>
+        <textarea asp-for="Content" id="editor" class="form-control inputHover"></textarea>
+        <span asp-validation-for="Content" class="text-danger"></span>
+    </div>
+    <div class="form-grup m-1 form-button">
+        <input type="submit" class="btn btn-danger" value="Edit" />
+    </div>
+</form>

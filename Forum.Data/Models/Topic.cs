@@ -9,7 +9,7 @@ namespace Forum.Data.Models
 
         public string Title { get; set; }
         public string  Content { get; set; }
-        public int AuthorId { get; set; }
+        public string AuthorId { get; set; }
         public User Author { get; set; }
         public virtual ICollection<Like> Likes { get; set; } = new HashSet<Like>();
         public virtual ICollection<Reply> Replies { get; set; } = new HashSet<Reply>();
